@@ -293,12 +293,12 @@ namespace ariel{
 
                     post_iterator operator++(int){
                         post_iterator tmp = *this;
-                     if(store_node.size()>1){
-                            store_node.erase(store_node.begin());
-                            this->pointer_node = store_node[0];
-                        }else{
+                        if(store_node.size()<=1){
                             pointer_node = nullptr;
-                        }  
+                            return tmp;
+                        }
+                        store_node.erase(store_node.begin());
+                        pointer_node = store_node[0];
                         return tmp;
                     }
 
