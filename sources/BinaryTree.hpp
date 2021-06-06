@@ -11,9 +11,9 @@ namespace ariel{
             class Node{
                 public:
                     T data;
-                    Node *parent, *left, *right;
+                    Node *left, *right;
 
-                    Node(const T d, Node* p=nullptr , Node* l=nullptr, Node* r=nullptr):data(d),parent(p),left(l),right(r){}
+                    Node(const T d, Node* l=nullptr, Node* r=nullptr):data(d),left(l),right(r){}
 
                     Node(Node* node){
                         this = node;
@@ -22,7 +22,6 @@ namespace ariel{
                     Node(const Node* node){
                         if(node!= nullptr){
                             this->data = node->data;
-                            this->parent = node->parent;
                             this->left = node->left;
                             this->right = node->right;
                         }
@@ -101,9 +100,6 @@ namespace ariel{
             void copy(Node* root1, const Node* root2)const{
                 if(!root2){return;}
                     root1->data = root2->data;
-                    if(root2->parent){
-                    root1->parent = new Node(root2->parent->data);
-                    }
                     if(root2->left){
                     root1->left = new Node(root2->left->data);
                     }
