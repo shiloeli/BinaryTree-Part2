@@ -342,7 +342,7 @@ namespace ariel{
                 std::cout << node->data << std::endl;
                 printtree( str + (ileft ? "│   " : "    "), node->left, true);
                 printtree( str + (ileft ? "│   " : "    "), node->right, false);
-                 }
+            }
         }
 
         friend std::ostream &operator<<(std::ostream &out, const BinaryTree<T>& treeree){
